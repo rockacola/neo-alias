@@ -18,7 +18,7 @@ export class AllReport {
     log('constructor triggered.')
     this.$el = options.$el
     this.$allCountValue = this.$el.find('.count-container .value')
-    this.$table = this.$el.find('table')
+    this.$table = this.$el.find('table.latest')
     this.$tableBody = this.$table.find('tbody')
     this.nodeManager = options.nodeManager
 

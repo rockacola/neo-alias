@@ -52,7 +52,7 @@ export class NodeManager {
     const splitIndex = hexValue.lastIndexOf(SPLITTER)
     const addressHex = hexValue.substring(0, splitIndex)
     const indexHex = hexValue.replace(addressHex + SPLITTER, '')
-    // log('addressHex:', addressHex, 'indexHex:', indexHex)
+    log('hexValue:', hexValue, 'addressHex:', addressHex, 'indexHex:', indexHex)
 
     const address = Neon.u.hexstring2str(addressHex)
     const index = (indexHex === '') ? 0 : parseInt(indexHex, 16)

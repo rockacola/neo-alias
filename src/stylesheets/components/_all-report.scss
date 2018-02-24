@@ -34,4 +34,10 @@
     background-color: rgba(orange, .1);
   }
 
+  table {
+    &.sample {
+      margin-top: 20px;
+    }
+  }
+
 }

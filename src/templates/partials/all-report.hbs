@@ -15,7 +15,7 @@
                         <span class="value">(loading...)</span>
                     </div>
 
-                    <table class="hover">
+                    {{!-- <table class="latest hover">
                         <thead>
                             <tr>
                                 <th class="index">#</th>
@@ -25,6 +25,23 @@
                             </tr>
                         </thead>
                         <tbody>
+                        </tbody>
+                    </table> --}}
+
+                    <table class="sample hover">
+                        <thead>
+                            <tr>
+                                <th class="address">Sample Addresses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each sampleAddresses }}
+                                <tr>
+                                    <td>
+                                        <a href="/aliases?w={{ this.address }}">{{ this.address }}</a>
+                                    </td>
+                                </tr>
+                            {{/each }}
                         </tbody>
                     </table>
 
