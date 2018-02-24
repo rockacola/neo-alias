@@ -1,0 +1,57 @@
+//
+// Partial / Animation
+//
+
+@keyframes twinkle {
+  0% {
+    opacity: .3;
+  }
+
+  100% {
+    opacity: .7;
+  }
+}
+
+@keyframes top-nav-slide-in {
+  0% {
+    display: block;
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// @keyframes contact-card-activate {
+//   0% {
+//     transform: translate3d(0, 100%, 0);
+//   }
+
+//   100% {
+//     transform: translate3d(0, 0, 0);
+//   }
+// }
+
+@keyframes roadmap-item-anchor-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  48% {
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+
+  52% {
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

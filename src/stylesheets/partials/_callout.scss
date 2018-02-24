@@ -1,0 +1,19 @@
+//
+// Modules / Callout
+//
+.callout {
+  margin: 8px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(black, .2);
+
+  .caption {
+    color: rgba(black, .6);
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .message {
+    color: rgba(black, .6);
+    font-size: 14px;
+  }
+}

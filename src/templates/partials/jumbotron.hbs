@@ -1,0 +1,41 @@
+<div class="jumbotron {{ classes }}" {{#if jumbotronId }}id="{{ jumbotronId }}"{{/if }}>
+    <div class="wrapper">
+        <div class="grid-container full">
+            <div class="grid-x align-middle">
+                <div class="cell">
+                    <div class="text-container text-center">
+
+                        {{#if (eq caption "logo")}}
+                            <h1 class="caption">{{> logo }}</h1>
+                        {{else}}
+                            <h1 class="caption">{{ caption }}</h1>
+                        {{/if}}
+                        
+                        {{#if subcaption}}
+                            <h3 class="subcaption">{{ subcaption }}</h3>
+                        {{/if}}
+                    </div>
+
+                    <div data-component="neon-profile">
+                        <div class="field node-url">
+                            <span class="label">Node:</span>
+                            <span class="value">(loading...)</span>
+                        </div>
+                        <div class="field node-version">
+                            <span class="label">NEO Version:</span>
+                            <span class="value">(loading...)</span>
+                        </div>
+                        <div class="field block-count">
+                            <span class="label">Block Count:</span>
+                            <span class="value">(loading...)</span>
+                        </div>
+                        <div class="field contract-version">
+                            <span class="label">Contract Version:</span>
+                            <span class="value">(loading...)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

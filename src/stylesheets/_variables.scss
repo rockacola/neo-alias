@@ -1,0 +1,123 @@
+//
+// Variables
+//
+
+// Color
+// --------------------------------------------------
+$color-primary: #372f3b;
+// $color-primary-lighter: #343e78; // For gradient transition
+$color-secondary: #7f9175;
+$color-text-dark: #111419;
+$color-text-light: #dde2e8;
+// $color-text-blue: #bacdf5;
+// $color-light-blue: #4cdcff; // CTA background
+$color-logo-primary: lighten($color-primary, 40);
+$color-logo-secondary: white;
+
+// Typography
+// --------------------------------------------------
+// $font-weight-thin: 100;
+// $font-weight-extra-light: 200;
+// $font-weight-light: 300;
+$font-weight-regular: 400;
+// $font-weight-medium: 500;
+// $font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+// $font-weight-extra-bold: 800;
+// $font-weight-black: 900;
+
+// @font-face {
+//     font-family: 'Open Sans';
+//     src: url(../fonts/opensans-light-webfont.woff2) format("woff2"),
+//          url(../fonts/opensans-light-webfont.woff) format("woff");
+//     font-weight: $font-weight-light;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'Open Sans';
+//     src: url(../fonts/opensans-regular-webfont.woff2) format("woff2"),
+//          url(../fonts/opensans-regular-webfont.woff) format("woff");
+//     font-weight: $font-weight-regular;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'Open Sans';
+//     src: url(../fonts/opensans-semibold-webfont.woff2) format("woff2"),
+//          url(../fonts/opensans-semibold-webfont.woff) format("woff");
+//     font-weight: $font-weight-semi-bold;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'Open Sans';
+//     src: url(../fonts/opensans-bold-webfont.woff2) format("woff2"),
+//          url(../fonts/opensans-bold-webfont.woff) format("woff");
+//     font-weight: $font-weight-bold;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'Open Sans';
+//     src: url(../fonts/opensans-extrabold-webfont.woff2) format("woff2"),
+//          url(../fonts/opensans-extrabold-webfont.woff) format("woff");
+//     font-weight: $font-weight-black;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'Merriweather';
+//     src: url(../fonts/merriweather-regular-webfont.woff2) format("woff2"),
+//          url(../fonts/merriweather-regular-webfont.woff) format("woff");
+//     font-weight: $font-weight-regular;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'FontAwesome';
+//     src: url('../fonts/fontawesome-webfont.woff2') format('woff2'),
+//          url('../fonts/fontawesome-webfont.woff') format('woff');
+//     font-weight: $font-weight-regular;
+//     font-style: normal;
+// }
+
+// $font-digital-7-mono-stack: 'Digital-7 Mono', monospace, san-serif;
+// $font-awesome-stack: 'FontAwesome';
+// $font-open-sans-stack: 'Open Sans', sans-serif;
+// $font-merriweather-stack: 'Merriweather', serif;
+// $font-francois-one-stack: 'Francois One', sans-serif;
+// $font-montserrat-stack: 'Montserrat', sans-serif;
+// $font-cabin-stack: 'Cabin', sans-serif;
+$font-roboto-stack: 'Roboto', sans-serif;
+$font-lato-stack: 'Lato', sans-serif;
+// $font-quicksand-stack: 'Quicksand', sans-serif;
+
+// Structure
+// --------------------------------------------------
+
+// Icons
+// --------------------------------------------------
+
+// Foundation Components
+// --------------------------------------------------
+$foundation-palette: (
+  primary: $color-primary,
+  secondary: $color-secondary,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
+);
+$button-background: #4cbcff;
+$button-radius: 3px;
+$grid-container: 960px;
+$menu-item-background-active: transparent;
+$offcanvas-sizes: (small: 100%);
+$offcanvas-background: $color-primary;
+$offcanvas-inner-shadow-size: 0;
+$offcanvas-transition-length: .5s;
+
+// Web App Specifics
+// --------------------------------------------------
+$app-top-menu-height-small: 60px;
+$app-top-menu-height-medium: 60px;

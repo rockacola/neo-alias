@@ -1,0 +1,37 @@
+//
+// Components / All Report
+//
+
+[data-component='all-report'] {
+  // background-color: rgba(yellow, .1);
+  margin: 60px 0;
+
+  > .wrapper {
+    > .grid-container {
+      > .grid-x {
+        border: 4px dashed lighten($color-primary, 10);
+        padding: 40px;
+      }
+    }
+  }
+
+  .heading {
+    margin: 0;
+  }
+
+  .count-container {
+    margin-top: 20px;
+    // background-color: rgba(orange, .1);
+    font-size: 18px;
+
+    .value {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .latest-container {
+    margin-top: 20px;
+    background-color: rgba(orange, .1);
+  }
+
+}

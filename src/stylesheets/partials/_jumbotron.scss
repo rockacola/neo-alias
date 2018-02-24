@@ -1,0 +1,80 @@
+//
+// Modules / Jumbotron
+//
+.jumbotron {
+  // background-color: rgba(blue, .1);
+  background-color: $color-primary;
+  // background-color: #312f3b;
+  padding: 20px;
+
+  > .wrapper {
+    // background-color: $color-primary;
+    // background-color: #273564;
+    border: 4px dashed lighten($color-primary, 10);
+    position: relative;
+    height: 360px;
+
+    > .grid-container {
+      height: 100%;
+
+      > .grid-x {
+        height: 100%;
+
+        > .cell {
+          position: relative;
+        }
+      }
+    }
+  }
+
+  .text-container {
+    // background-color: rgba(white, .05);
+    // margin: 80px auto 0;
+    // padding: 0 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+
+    .caption {
+      // color: $color-light-blue;
+      color: #bacbf5;
+
+      .logo {
+        .primary,
+        .secondary {
+          font-size: 48px;
+        }
+      }
+    }
+
+    .subcaption {
+      color: white;
+      font-size: 16px;
+      font-weight: $font-weight-regular;
+    }
+
+    .blurb {
+      // margin-top: 80px;
+      margin-top: 20px;
+      color: white;
+      font-size: 20px;
+      font-weight: $font-weight-bold;
+
+      @include breakpoint(medium) {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  [data-component='neon-profile'] {
+    text-align: center;
+    color: $color-secondary;
+    font-size: 14px;
+
+    .field {
+      .label {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,153 @@
+//
+// Modules / Header
+//
+
+.no-js {
+  .page-header {
+    .language-selector {
+      .menu {
+        &.dropdown {
+          .menu {
+            display: none; // Prevent FOUC
+          }
+        }
+      }
+    }
+  }
+
+  .off-canvas {
+    display: none; // Prevent FOUC
+  }
+}
+
+.page-header {
+  background-color: $color-primary;
+  // background-color: #312f3b;
+  color: $color-text-light;
+  // transition: background-color .3s;
+  // border-bottom: 4px solid $color-primary-lighter;
+
+  > .grid-container {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    > .grid-x {
+      height: $app-top-menu-height-small;
+      box-sizing: border-box;
+
+      @include breakpoint (medium) {
+        height: $app-top-menu-height-medium;
+      }
+    }
+  }
+
+  // &:hover {
+  //   background-color: lighten($color-primary, 2%);
+  // }
+
+  .logo {
+    a {
+      display: inline-block;
+      padding: 6px 0;
+
+      img {
+        width: 120px;
+        transition: width .3s;
+
+        @include breakpoint(medium) {
+          width: 160px;
+        }
+      }
+    }
+  }
+
+  .menu {
+    .item {
+      margin-left: 13px;
+      margin-right: 13px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      @include breakpoint(large) {
+        margin-left: 16px;
+        margin-right: 16px;
+      }
+    }
+
+    a {
+      color: $color-text-light;
+      // text-decoration: none;
+      font-weight: $font-weight-bold;
+      padding-left: 0;
+      padding-right: 0;
+      transition: font-size .3s;
+
+      &:hover,
+      &:active {
+        text-decoration: none;
+        color: darken($color-text-light, 20);
+      }
+
+      @include breakpoint(medium only) {
+        font-size: 14px;
+        // font-size: 16px;
+        // background-color: rgba(white, .2);
+      }
+    }
+  }
+
+  [data-dropdown-menu] {
+    .is-dropdown-submenu {
+      z-index: 1000; // Explicitly set a high z-index value to avoid been sitting behind other absolute elements
+      box-sizing: border-box;
+      border: 0;
+
+      a {
+        width: 100%;
+        background-color: lighten($color-primary, 20%);
+        color: $color-text-light;
+
+        &:hover,
+        &:active {
+          text-decoration: none;
+          background-color: lighten($color-primary, 10%);
+        }
+      }
+    }
+  }
+
+  .mobile-nav-toggle {
+    display: inline-block;
+    color: $color-secondary;
+    // font-size: 28px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 10px;
+  }
+}
+
+.off-canvas {
+  display: block;
+
+  .menu {
+    a {
+      &:hover,
+      &:active {
+        text-decoration: none;
+        // background-color: rgba($color-primary, .05);
+      }
+    }
+  }
+}
+
+.off-canvas-content {
+  &.is-open-right {
+    .page-header {
+      .mobile-nav-toggle {
+        display: none; // Hide mobile nav when sidebar is open
+      }
+    }
+  }
+}

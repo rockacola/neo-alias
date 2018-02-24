@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ language }}" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>{{ seoTitle }}</title>
+    <meta name="description" content="{{ seoDescription }}">
+    {{#if seoRobots }}<meta name="robots" content="{{ seoRobots }}">{{/if }}
+    {{> ga-script }}
+    {{!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:700,900|Quicksand:400,700"> --}}
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Roboto:400,700">
+    <link rel="stylesheet" href="/css/main.css?{{ appVersion }}">
+    {{!-- <link rel="shortcut icon" type="image/x-icon" href="/images/favicon-32.png"> --}}
+</head>
+<body data-template="{{ templateName }}" data-page-id="{{ id }}" data-app-version="{{ appVersion }}">
+    {{!-- Mobile sidebar container --}}
+    {{> off-canvas }}
+
+    {{!-- Standard page container --}}
+    <div class="off-canvas-content" data-off-canvas-content>
+        <div class="outline">
+            {{> page-header }}

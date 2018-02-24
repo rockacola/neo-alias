@@ -1,0 +1,47 @@
+//
+// Components / Alias List
+//
+
+[data-component='alias-list'] {
+  // background-color: rgba(yellow, .1);
+  margin: 60px 0;
+  padding: 60px 0;
+
+  .caption {
+    font-weight: $font-weight-regular;
+    font-size: 20px;
+
+    .address {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  form {
+    margin: 20px 0;
+
+    .field {
+      margin: 8px 0;
+
+      label {
+        display: block;
+        font-size: 13px;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px 6px;
+      }
+    }
+  }
+
+  table {
+    td {
+      &.operation {
+        a {
+          display: inline-block;
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+}

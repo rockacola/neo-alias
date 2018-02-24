@@ -1,0 +1,106 @@
+//
+// Modules / Global
+//
+
+// Generic Elements
+// --------------------------------------------------
+body {
+  // font-family: $font-cabin-stack;
+  font-family: $font-lato-stack;
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+  line-height: 1.7;
+  color: $color-text-dark;
+  position: relative;
+  background-color: #ededed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // font-family: $font-montserrat-stack;
+  // font-weight: $font-weight-extra-bold;
+  font-family: $font-roboto-stack;
+  // font-weight: $font-weight-black;
+  font-weight: $font-weight-bold;
+  margin: 22px 0;
+  line-height: 1.2;
+}
+
+h1 { font-size: 38px; }
+h2 { font-size: 32px; }
+h3 { font-size: 26px; }
+h4 { font-size: 22px; }
+h5 { font-size: 18px; }
+h6 { font-size: 14px; }
+
+p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+a {
+  color: #496ec7;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+ul,
+ol,
+dl {
+  padding-left: 32px;
+}
+
+blockquote {
+  margin-left: 12px;
+  border-left: solid 4px lightgrey;
+  padding-left: 12px;
+  color: slategrey;
+}
+
+pre {
+  background-color: rgba(black, .03);
+  font-size: 14px;
+  line-height: normal;
+  padding: 12px;
+}
+
+hr {
+  border: 0;
+  border-top: solid 1px lightgrey;
+}
+
+input,
+textarea {
+  // font-family: $font-cabin-stack;
+  font-family: $font-lato-stack;
+  font-size: 15px;
+  font-weight: $font-weight-regular;
+  line-height: normal;
+
+  // &:focus {
+  //   box-shadow: 0 0 5px rgba(white, 0.2);
+  // }
+}
+
+::selection {
+  background-color: #afc6e8; // A lighter variant of primary color.
+}
+
+// Standard Structure
+// --------------------------------------------------
+
+
+
+// .page-content {
+//   background-color: rgba(blue, .1);
+// }
+
+

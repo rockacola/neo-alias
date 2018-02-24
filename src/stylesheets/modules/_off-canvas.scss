@@ -1,0 +1,119 @@
+//
+// Modules / Off-canvas
+//
+
+.off-canvas {
+  .operator-container {
+    border-bottom: solid 4px darken($color-secondary, 30);
+
+    > .grid-container {
+      > .grid-x {
+        height: $app-top-menu-height-small;
+      }
+    }
+
+    .logo {
+      img {
+        width: 120px;
+      }
+    }
+
+    .mobile-nav-toggle {
+      // background-color: rgba(yellow, .1);
+      // display: inline-block;
+      display: block;
+      // margin: 10px 0;
+      // font-size: 58px;
+      // font-size: 40px;
+      // font-weight: $font-weight-bold;
+      cursor: pointer;
+      // padding: 0 10px;
+      padding: 10px;
+      // color: $color-secondary;
+      // line-height: .7;
+
+      // .symbol {
+      //   display: block;
+      //   margin-left: auto;
+      //   margin-right: 0;
+      //   width: 16px;
+      //   height: 16px;
+      //   // background-color: rgba(red, .15);
+      //   background: url('/images/icon-close.png') 0 0 no-repeat;
+      //   background-image: url('/images/icon-close.svg');
+      //   background-size: contain;
+      // }
+
+      .icon {
+        color: $color-secondary;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .menu-container {
+    margin-top: 30px;
+
+    > .menu {
+      font-weight: $font-weight-bold;
+
+      > li {
+        margin: 0 60px;
+        text-align: center;
+
+        &.white-paper {
+          margin-top: 36px;
+
+          a {
+            color: $color-primary;
+          }
+        }
+
+        a {
+          font-size: 16px;
+          color: white;
+          border-bottom: 2px solid darken($color-secondary, 30);
+          padding: 22px 0;
+        }
+
+        // &:nth-last-of-type(2), // NOTE: this is to apply 'last 2 items'
+        // &:last-of-type {
+        //   a {
+        //     border-bottom: 0;
+        //   }
+        // }
+      }
+    }
+  }
+
+  .social-caption {
+    color: #bacdf5;
+    text-align: center;
+    margin: 20px 60px 0;
+    font-weight: $font-weight-bold;
+  }
+
+  .social-container {
+    margin: 20px 60px 0;
+
+    .social-item {
+      color: #bacdf5;
+      margin: 0 6px 12px;
+
+      &:hover,
+      &:active {
+        color: #ffe164;
+      }
+    }
+  }
+
+  [data-dropdown-menu] {
+    display: inline-block;
+
+    .submenu {
+      // sass-lint:disable no-important
+      right: -26px !important;
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+//
+// Components / Top Nav
+//
+
+[data-component='top-nav'] {
+  &.is-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    animation-name: top-nav-slide-in;
+    animation-duration: .3s;
+  }
+}

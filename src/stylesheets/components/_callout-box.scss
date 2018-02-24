@@ -1,0 +1,15 @@
+//
+// Components / Callout Box
+//
+
+[data-component='callout-box'] {
+  // border: solid 2px blue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  > .wrapper {
+    position: relative;
+  }
+}

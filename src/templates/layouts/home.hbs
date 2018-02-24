@@ -1,0 +1,64 @@
+{{> doc-head templateName="page" }}
+<section class="page-content">
+    <div class="wrapper">
+        {{> jumbotron jumbotronId="jumbotron-home"
+            caption="logo"
+            subcaption="Give identities to NEO ecosystem."
+        }}
+
+        {{> hero heroId="hero-match" classes=""
+            type="pair"
+            size="medium"
+            caption="Project Vision"
+            subcaption=""
+            blurb="The goal of this project is to provide a trustless, community-driven platform allowing anyone to place identities or pseudonyms to NEO wallets."
+            featureImagePath="/images/id-card.png"
+        }}
+
+        <div class="text-block">
+            <div class="wrapper">
+                <div class="grid-container">
+                    <div class="grid-x">
+                        <div class="cell">
+                            <h3>For dApp Competition Submission</h3>
+                            <p>
+                                This website will act as a light client interacts directly with smart contract.
+                            </p>
+                            <p>
+                                Following functionalities are current available are part of Alpha phase in NEO TestNet:
+                            </p>
+                            <ul>
+                                <li>Anyone is able to view wallets' aliases through this client and its 'Aliases page' (<a href="/aliases?w=AYUhHYViEoXEWeLQsXU9y1taps4nvjAHiy">Example</a>)</li>
+                                <li>By providing your wallet WIF, you can assign alias to given wallet address with minimal TX cost. An up vote is casted programmatically upon alias creation.</li>
+                                <li>A wallet address can only cast 1 vote to each alias.</li>
+                                <li>By providing your wallet WIF, you can cast up or down vote towards specific wallet aliases.</li>
+                            </ul>
+                        </div>
+
+                        <div class="cell">
+                            <h4>Milestones</h4>
+                            <p>
+                                There are several known concerns, security, glitch or feature wise, that this project will gradually work towards:
+                            </p>
+                            <ul>
+                                <li>Better validation process in smart contract.</li>
+                                <li>Block-stamp logging per alias creation and vote cast.</li>
+                                <li>To provide semantic error response from smart contract, oppose to simple "False" upon issues.</li>
+                                <li>Add alias duplicate detection logic in smart contract.</li>
+                                <li>Add cool down logic in smart contract to prevent mass alias creation or vote casting from a single address.</li>
+                                <li>Add access level control, and introduce moderation capability within smart contract.</li>
+                                <li>Create a REST API for easier integration support with other applications.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{> all-report }}
+
+        {{> set-alias-form }}
+
+    </div>
+</section>
+{{> doc-foot }}

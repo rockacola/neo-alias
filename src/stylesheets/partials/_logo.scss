@@ -1,0 +1,23 @@
+//
+// Modules / Text Block
+//
+.logo {
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 0;
+
+  .primary,
+  .secondary {
+    display: inline-block;
+    font-size: 20px;
+  }
+
+  .primary {
+    color: $color-logo-primary;
+  }
+
+  .secondary {
+    color: $color-logo-secondary;
+  }
+}

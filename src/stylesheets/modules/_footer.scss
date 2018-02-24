@@ -1,0 +1,54 @@
+//
+// Modules / Footer
+//
+
+.page-footer {
+  background-color: $color-primary;
+  // background-color: #312f3b;
+
+  .blurb-container {
+    > .grid-container {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      > .grid-x {
+        // min-height: 360px;
+        height: 120px; // NOTE: This is for when there's no footer nav
+        // align-content: space-evenly;
+
+        // @include breakpoint(medium) {
+        //   height: 140px; // IE 11 flex fix
+        //   min-height: 140px;
+        // }
+      }
+    }
+
+    .copyright-container {
+      // color: $color-text-blue;
+      color: white;
+      font-size: 14px;
+
+      .copyright {
+        display: block;
+
+        // @include breakpoint(medium) {
+        //   display: inline-block;
+        // }
+
+        .icon {
+          margin: 0 6px;
+        }
+      }
+
+      .version {
+        display: block;
+        // color: rgba($color-text-blue, .25);
+        // font-size: 13px;
+
+        // @include breakpoint(medium) {
+        //   display: inline-block;
+        // }
+      }
+    }
+  }
+}

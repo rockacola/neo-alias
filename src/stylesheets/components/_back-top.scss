@@ -1,0 +1,28 @@
+//
+// Components / Back Top
+//
+
+[data-component='back-top'] {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  z-index: 10;
+  background-color: darken(white, 10%);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color .3s;
+
+  &:hover,
+  &:active {
+    background-color: white;
+  }
+
+  .icon {
+    font-size: 28px;
+    line-height: 36px;
+    color: $color-primary;
+  }
+}

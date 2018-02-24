@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "empty-args": 0,
+    "nesting-depth": [
+      0,
+      "max-depth": 6
+    ],
+    "no-color-keywords": 0,
+    "no-color-literals": 0,
+    "no-ids": 0,
+    "property-sort-order": 0
+  }
+}
