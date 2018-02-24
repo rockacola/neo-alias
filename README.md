@@ -6,6 +6,4 @@ Give identities to NEO ecosystem.
 
 * [Contract Source](https://github.com/rockacola/neo-alias/tree/develop)
 * [Web App Source](https://github.com/rockacola/neo-alias/blob/contracts/contracts/neo-alias.py)
-* [Demo Page](https://rockacola.github.io/neo-alias/)
-
-'Demo Page' is currently not working due to HTTPS requirement on RPC endpoints.
+* [Demo Page](http://neoalias.com/)
