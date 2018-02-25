@@ -19,6 +19,7 @@ OWNER = b'\x96P\xac\xd6\xb7S,\xb4\xeaiU\xedK\x0f\xd3\xaa\xa9\xc9Q\x87'  # Script
 def Main(operation: str, args: list) -> bytearray:
     trigger = GetTrigger()
 
+    # Though there's no explicit verification usage involved in this project, this is placed here to better align with NEP5 template
     if trigger == Verification():
         is_owner = CheckWitness(OWNER)
         Notify('Check is_owner:')
@@ -27,15 +28,16 @@ def Main(operation: str, args: list) -> bytearray:
             return True
         return False
 
+    # Proceed with standard operation determininations
     elif trigger == Application():
-        if operation == 'version':
+        if operation == 'version':          # Output hard coded version value within the contract (not to be confused with metadata value in `getContractState`)
             result = do_version()
             return result
         elif operation == 'is_owner':       # Checking if invoker is the owner of the smart contract
             result = do_is_owner()
             return result
 
-        # Standard
+        # Standard Operations
         elif operation == 'count_alias':    # Count numbers of alias assigned to the specified address
             result = do_count_alias(args)
             return result
@@ -48,29 +50,29 @@ def Main(operation: str, args: list) -> bytearray:
         elif operation == 'get_alias_score':  # Fetch score value of the specified address of a specified index
             result = do_get_alias_score(args)
             return result
-        elif operation == 'get_aliases':    # Fetch all aliases to the specified address # TODO: consider deprecating this to simplify the contract
+        elif operation == 'get_aliases':    # Fetch all aliases to the specified address # NOTE: Deprecating, not been used
             result = do_get_aliases(args)
             return result
-        elif operation == 'vote_alias':     # Cast your vote to the specified address of a specified index, and return with current score
+        elif operation == 'vote_alias':     # Cast your vote to the specified address of a specified index
             result = do_vote_alias(args)
             return result
 
-        # Stats
-        elif operation == 'count_all':      # Count total alias assigned
+        # Stats Operations
+        elif operation == 'count_all':      # Count total alias created in this contract
             result = do_count_all_aliases()
             return result
-        elif operation == 'get_all_index':  # Get the alias key of specified all index
+        elif operation == 'get_all_index':  # Get the alias key of specified 'all index'
             result = do_get_all_index(args)
             return result
 
         # Admin Utilities
-        elif operation == 'get_storage':
+        elif operation == 'get_storage':    # Direct read access to a storage key. Can only be invoked by contract owner
             result = do_get_storage(args)
             return result
-        elif operation == 'set_storage':
+        elif operation == 'set_storage':    # Direct write access to a storage key. Can only be invoked by contract owner
             result = do_set_storage(args)
             return result
-        elif operation == 'my_address':
+        elif operation == 'my_address':     # Output invoker's address. Asset attachment is required to invoke this operation
             result = get_invoker_address()
             return result
 
@@ -101,7 +103,7 @@ def do_count_alias(args: list) -> int:
     # Notify(args)
     if len(args) > 0:
         context = GetContext()
-        address = args[0]
+        address = args[0]   # Expect a string value
         result = get_alias_count(context, address)
         return result
     Notify('invalid argument length')
@@ -111,9 +113,9 @@ def do_count_alias(args: list) -> int:
 def do_set_alias(args: list) -> bool:
     if len(args) > 2:
         context = GetContext()
-        invoker_address = args[0]
-        target_address = args[1]
-        new_alias = args[2]
+        invoker_address = args[0]   # Expect a string value
+        target_address = args[1]    # Expect a string value
+        new_alias = args[2]         # Expect a string value
         # -- Ignore invoker validation for now
         # is_match = CheckWitness(invoker_address)
         # Notify('Check is_match:')
@@ -130,8 +132,8 @@ def do_set_alias(args: list) -> bool:
 def do_get_alias(args: list) -> str:
     if len(args) > 1:
         context = GetContext()
-        address = args[0]
-        index = args[1]  # TODO: validate input
+        address = args[0]   # Expect a string value
+        index = args[1]     # Expect an integer
         result = get_alias(context, address, index)
         return result
     Notify('invalid argument length')
@@ -141,8 +143,8 @@ def do_get_alias(args: list) -> str:
 def do_get_alias_score(args: list) -> int:
     if len(args) > 1:
         context = GetContext()
-        address = args[0]
-        index = args[1]  # TODO: validate input
+        address = args[0]   # Expect a string value
+        index = args[1]     # Expect an integer
         score = get_alias_score(context, address, index)
         return score
     Notify('invalid argument length')
@@ -152,7 +154,7 @@ def do_get_alias_score(args: list) -> int:
 def do_get_aliases(args: list) -> list:
     if len(args) > 0:
         context = GetContext()
-        address = args[0]
+        address = args[0]   # Expect a string value
         result = get_aliases(context, address)
         return result
     Notify('invalid argument length')
@@ -162,15 +164,15 @@ def do_get_aliases(args: list) -> list:
 def do_vote_alias(args: list) -> int:
     if len(args) > 3:
         context = GetContext()
-        invoker_address = args[0]
-        target_address = args[1]
-        index = args[2]
-        point = args[3]
+        invoker_address = args[0]           # Expect a string value
+        target_address = args[1]            # Expect a string value
+        index = args[2]                     # Expect an integer
+        point = args[3]                     # Expect an integer
         count = get_alias_count(context, target_address)
-        if (index < 0 or index >= count):  # Validate target index
+        if (index < 0 or index >= count):   # Validate target index
             Notify('invalid index value provided')
             return False
-        if point != 1 and point != -1:  # Validate vote point value
+        if point != 1 and point != -1:      # Validate vote point value. Currently only support value of '1' or '-1' to represent 'up' and 'down' votes
             Notify('invalid vote point provided')
             return False
         else:
@@ -198,7 +200,7 @@ def do_get_all_index(args: list) -> bytearray:
     Notify('do_get_all_index triggered.')
     if len(args) > 0:
         context = GetContext()
-        index = args[0]
+        index = args[0]     # Expect an integer
         Notify('index:')
         Notify(index)
         key = prepare_alias_key('all', index)
@@ -220,7 +222,7 @@ def do_get_storage(args: list) -> bytearray:
         return False
     if len(args) > 0:
         context = GetContext()
-        key = args[0]
+        key = args[0]   # Expect a string value
         Notify('key:')
         Notify(key)
         value = Get(context, key)
@@ -239,10 +241,10 @@ def do_set_storage(args: list) -> bytearray:
         return False
     if len(args) > 1:
         context = GetContext()
-        key = args[0]
+        key = args[0]   # Expect a string value
         Notify('key:')
         Notify(key)
-        value = args[1]
+        value = args[1] # Expect a string value
         Notify('value:')
         Notify(value)
         Put(context, key, value)
@@ -255,17 +257,17 @@ def do_set_storage(args: list) -> bytearray:
 
 
 def get_alias_count(context, address: str) -> int:
-    # TODO: validate address
+    # TODO: validate target address
     Notify('get_alias_count triggered.')
     key = prepare_count_key(address)
     Notify('key:')
     Notify(key)
     value = Get(context, key)
-    if value == None:  # Must use ==. use 'is' provides false negative
+    if value == None:       # Must use ==. use of 'is' will provides false negative
         Notify('oh, value detected to be None.')
         value = 0
     else:
-        value = value + 0  # trick value to always be an integer # NOTE: is this even a real hack?
+        value = value + 0   # trick value to always be an integer # NOTE: is this even a real hack?
     Notify('value:')
     Notify(value)
     return value
@@ -287,7 +289,7 @@ def set_alias(context, invoker_address: str, target_address: str, new_alias: str
     # TODO: get invokers address
     # TODO: verify if this is the first time invoker assigning alias to target address
     Notify('set_alias triggered.')
-    index = get_alias_count(context, target_address)
+    index = get_alias_count(context, target_address)                # Obtain the current alias count of specified address. This will then serve as the next index for this alias assignment.
     Notify('index:')
     Notify(index)
     key = prepare_alias_key(target_address, index)
@@ -303,7 +305,7 @@ def set_alias(context, invoker_address: str, target_address: str, new_alias: str
     all_index = get_all_count(context)
     Notify('all_index:')
     Notify(all_index)
-    set_all_alias(context, all_index, key)  # Store alias key as value for all records
+    set_all_alias(context, all_index, key)                          # Store alias key as value for all records
     increment_all_count(context, all_index)
     # log invoker's address assignment by cast default 1 point vote
     vote_alias(context, invoker_address, target_address, index, 1)  # TODO: we can reduce GAS cost by omit check_has_voted()
@@ -337,18 +339,14 @@ def vote_alias(context, invoker_address: str, target_address: str, index: int, p
     Notify('has_voted:')
     Notify(has_voted)
     if has_voted == False:
-        # Get stored score for this alias
-        existing_score = get_alias_score(context, target_address, index)
+        existing_score = get_alias_score(context, target_address, index)        # Get stored score for this alias
         Notify('existing_score:')
         Notify(existing_score)
-        # Update value
-        new_score = existing_score + point
+        new_score = existing_score + point                                      # Update value
         Notify('new_score:')
         Notify(new_score)
-        # Store new score
-        set_alias_score(context, target_address, index, new_score)
-        # Set vote log
-        log_vote(context, invoker_address, target_address, index, new_score)
+        set_alias_score(context, target_address, index, new_score)              # Store new score
+        log_vote(context, invoker_address, target_address, index, new_score)    # Set vote log
         return new_score
     else:
         Notify('invoker has already voted for this alias')
@@ -441,7 +439,7 @@ def prepare_log_vote_key(invoker_address: str, target_address: str, index: int) 
 def get_invoker_address() -> str:
     '''
     I don't think you can Notify() tx, references nor reference.
-    Also you cannot really have validators in place, things like "if tx is not None" error'ed out.
+    Also you cannot really have validators in place, usages like "if tx is not None" will error'ed out.
     '''
     Notify('get_invoker_address triggered.')
     tx = GetScriptContainer()
