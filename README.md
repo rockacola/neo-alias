@@ -4,7 +4,7 @@ Give identities to NEO ecosystem.
 
 ## Summary
 
-* [Contract Source](https://github.com/rockacola/neo-alias/blob/contracts/contracts/neo-alias.py)
+* [Web App](http://neoalias.com/)
 * [Web App Source](https://github.com/rockacola/neo-alias/tree/develop)
-* [Demo Page](http://neoalias.com/)
+* [Contract Source](https://github.com/rockacola/neo-alias/blob/contracts/contracts/neo-alias.py)
 * [dApp Usage Documentation](https://github.com/rockacola/neo-alias/blob/contracts/DAPP_USAGE_README.md)
