@@ -8,7 +8,7 @@ const Query = Neon.rpc.Query
 declare const $: any
 
 export class NodeManager {
-  private rpcUrl = 'http://seed5.neo.org:20332'
+  private rpcUrl = 'http://seed2.neo.org:20332'
   private network = 'TestNet'
   // private neoAliasHash = '8a092d91a822192b20e91722dc3dea28dfdb5cbd' // Version 17
   private neoAliasHash = '83d3ddd44f4c197152b827f3660b00a49fcb5d22' // Version 18
