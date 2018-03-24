@@ -8,8 +8,8 @@ const Query = Neon.rpc.Query
 declare const $: any
 
 export class NodeManager {
-  // private rpcUrl = 'http://seed2.neo.org:20332'
-  private rpcUrl = 'http://seed5.neo.org:20332'
+  private rpcUrl = 'http://seed2.neo.org:20332'
+  // private rpcUrl = 'http://seed5.neo.org:20332'
   // private rpcUrl = 'http://test2.cityofzion.io:8080'
   private network = 'TestNet'
   // private neoAliasHash = '8a092d91a822192b20e91722dc3dea28dfdb5cbd' // Version 17
