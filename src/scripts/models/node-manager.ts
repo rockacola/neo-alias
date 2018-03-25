@@ -1,6 +1,7 @@
 import { debounce } from 'lodash'
 import * as Neon from '@cityofzion/neon-js'
 import * as Bows from 'bows'
+import { Utils } from '../utils/base';
 const log = Bows('NodeManager')
 const Query = Neon.rpc.Query
 
@@ -8,9 +9,7 @@ const Query = Neon.rpc.Query
 declare const $: any
 
 export class NodeManager {
-  private rpcUrl = 'http://seed2.neo.org:20332'
-  // private rpcUrl = 'http://seed5.neo.org:20332'
-  // private rpcUrl = 'http://test2.cityofzion.io:8080'
+  private rpcUrl = ''
   private network = 'TestNet'
   // private neoAliasHash = '8a092d91a822192b20e91722dc3dea28dfdb5cbd' // Version 17
   private neoAliasHash = '83d3ddd44f4c197152b827f3660b00a49fcb5d22' // Version 18
@@ -20,6 +19,7 @@ export class NodeManager {
 
     // -- Init
     this.initNode()
+    this.initRpcUrl()
 
     // -- Event bindings
 
@@ -38,6 +38,22 @@ export class NodeManager {
         log(`Connected to [${this.rpcUrl}], Version: [${res}]`)
       })
       .catch((err) => {})
+  }
+
+  private initRpcUrl(): void {
+    // Hard coded default
+    const URL = 'http://seed2.neo.org:20332'
+
+    // Attempt to fetch from URL parameter
+    const providedRpcUrl = Utils.getParameterByName('rpc', window.location.href) // Assume it is URL decoded and accurate
+    
+    // Assignment
+    if (providedRpcUrl) {
+      log('Setting target RPC with user provided URL:', providedRpcUrl)
+      this.rpcUrl = providedRpcUrl
+    } else {
+      this.rpcUrl = URL
+    }
   }
 
   private getAddressIndexInfo(hexValue: string): any {
